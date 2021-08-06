@@ -37,6 +37,8 @@
         <!-- Custom styles for this template--> 
         <link href="https://getbootstrap.com/docs/4.2/examples/dashboard/dashboard.css" rel="stylesheet">
     </head>
+
+
     <body>
         
             <div class="body_header">
@@ -79,11 +81,13 @@
                     {% endblock %}
                     <footer>
                         <p class="float-right"><a href="#">Back to top</a></p>
-                        <p>&copy; 2020 Tango With Django 2 &middot; <a href="#">Privacy</a> &middot;
+                        <p>&copy; 2021 four anger dachshund &middot; <a href="#">Privacy</a> &middot;
                         <a href="#">Terms</a></p>
                     </footer>
                 </main>
+                
             </div>
+            <div align="center"><img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" width="40%"></div>
             
         </div>-->
         {% endcomment %}
@@ -97,7 +101,17 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://getbootstrap.com/docs/4.2/examples/dashboard/dashboard.js"></script>
     </body>
+    <style> 
+        body {
+background-image: url('../../static/images/background.jpg');
+}
+ 
+        </style> 
+
 </html>
+
+
+
 {% comment %}
 <!--<!DOCTYPE html>
 {% load staticfiles %}
