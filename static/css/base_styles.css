@@ -143,9 +143,7 @@ a.rango-search-button {
     width: 200px;
 }
 
-.nav-link{
-    color:white;
-}
+
 
 a.rango-search-button:hover {
     background-color: var(--highlight-subtle);
