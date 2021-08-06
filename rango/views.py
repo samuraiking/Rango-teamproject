@@ -171,9 +171,6 @@ def visitor_cookie_handler(request):
     
     request.session['visits'] = visits
 
-<<<<<<< HEAD
-
-
 class ProfileView(View):
     def get_user_details(self, username):
         
@@ -213,13 +210,3 @@ class ProfileView(View):
             'selected_user': user,
             'form': form}
         return render(request, 'rango/account_interface.html', context_dict)
-=======
-def search(request):
-    result_list = []
-    if request.method == 'POST':
-        query = request.POST['query'].strip()
-        if query:# Run our Bing function to get the results list!
-            result_list = run_query(query)
-    return render(request, 'rango/search.html', {'result_list': result_list})
-
->>>>>>> e1dc1b2c02a730e85624d68f5f10bcb0336b4fef
