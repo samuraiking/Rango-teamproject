@@ -4,72 +4,65 @@
 {% load rango_template_tags %}
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Jekyll v3.8.5">
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/header_styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar_styles.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base_styles.css' %}">
+        
+
+        {% block style_block %}
+        {% endblock %}
+
+
         <title>Rango- {% block title_block %}How to Tango with Django!{% endblock %}</title>
-        <link rel="icon" href="{% static 'images/favicon.ico' %}">
+        <link rel="icon" href="{% static 'images/favicon.png' %}">
         
 
         
 
-        <!-- Bootstrap core CSS -->
+        <!-- Bootstrap core CSS--> 
         <link href="https://getbootstrap.com/docs/4.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
         
 
 
         
-        <!-- Custom styles for this template -->
+        <!-- Custom styles for this template--> 
         <link href="https://getbootstrap.com/docs/4.2/examples/dashboard/dashboard.css" rel="stylesheet">
     </head>
     <body>
-    
-        <header>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark p-0">
-            <a class="navbar-brand p-2" href="{% url 'rango:index' %}">Rango</a>
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="{% url 'rango:index' %}">Home</a></li>
-
-                <li class="nav-item ">
-                <a class="nav-link" href="{% url 'rango:about' %}">About</a></li>
-
-                {% if user.is_authenticated %}
-                <li class="nav-item ">
-                    <a class="nav-link"  href="{% url 'rango:restricted' %}">Restricted</a></li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
-
-                <li class="nav-item">
-                    <a class="nav-link"   href="{% url 'rango:add_category' %}">Add Category</a></li>
-
-                <li class="nav-item">
-                    <a class="nav-link"   href="{% url 'auth_password_change' %}">Change Password</a></li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'registration_register' %}">Register Here</a></li>
-                    
-                <li class="nav-item ">
-                    <a class="nav-link"   href="{% url 'auth_login' %}">Login</a></li>
-                {% endif %}
-            </ul>
+        
+            <div class="body_header">
+                {% block header_block %}
+                    {% include 'rango/header.html' %}
+                {% endblock %}
             </div>
-        </nav>
-        </header>
+            
+            <div class="body_sidebar">
+                {% block sidebar_block %}
+                    {% include 'rango/sidebar.html' %}
+                {% endblock %}
+            </div>
 
-        <div class="container-fluid">
+            <div class="body_content">
+                {% block body_block %}
+                {% endblock %}
+            </div>
+            
+
+
+            {% comment %}
+        <!--<div class="container-fluid">
             <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-auto d-md-block bg-light sidebar collapse">
+                    <br/>
                     <div class="sidebar-sticky">
                         {% block sidebar_block %}
                             {% get_category_list category %}
@@ -88,8 +81,8 @@
                 </main>
             </div>
             
-        </div>
-
+        </div>-->
+        {% endcomment %}
         
 
         <!-- Bootstrap core JavaScript -->
