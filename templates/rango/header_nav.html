@@ -5,6 +5,6 @@
     <a href="{% url 'rango:about' %}"><span>About</span></a>
     {% if user.is_authenticated %}
     <a href="{% url 'rango:add_category' %}"><span>Add Category</span></a>
-    <a href="{% url 'rango:about' %}"><span>Show All User</span></a>
+    <a href="{% url 'rango:list_profiles' %}"><span>Show All User</span></a>
     {% endif %}
 </nav>

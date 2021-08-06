@@ -150,6 +150,19 @@ def search(request):
     return render(request, 'rango/search.html', {'result_list': result_list})
 
 
+def goto_url(request):
+    if request.method == 'GET':
+        page_id = request.GET.get('page_id')
+        try:
+            selected_page = Page.objects.get(id=page_id)
+        except Page.DoesNotExist:
+            return redirect(reverse('rango:index'))
+        selected_page.views = selected_page.views + 1
+        selected_page.save()
+        return redirect(selected_page.url)
+    return redirect(reverse('rango:index'))
+
+
 
 @login_required
 def restricted(request):
@@ -210,3 +223,9 @@ class ProfileView(View):
             'selected_user': user,
             'form': form}
         return render(request, 'rango/account_interface.html', context_dict)
+
+class ListProfilesView(View):
+    @method_decorator(login_required)
+    def get(self, request):
+        profiles = UserProfile.objects.all()
+        return render(request,'rango/list_profiles.html',{'user_profile_list': profiles})
