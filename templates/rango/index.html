@@ -18,6 +18,29 @@
 {% block body_block %}
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-6">
+                <div class="card-body">
+                    <h2>Most Liked Categories</h2>
+                    <p class="card-text">
+                        {% if categories %}
+                            <ul  class="list-group-item" class="list-group-item" class="list-group-item">
+                                {% for category in categories %}
+                                    <li class="list-group-item">
+                                        <a href="{% url 'rango:show_category' category.slug %}">{{ category.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <strong>There are no categories present.</strong>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
 <div class='index-widget welcome test'>
     <h1>Welcome to Rango</h1>
     <p>
