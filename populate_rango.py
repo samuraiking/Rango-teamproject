@@ -54,33 +54,33 @@ def populate():
     
     recommend_java_pages = [
         {'title': 'Core Java Volume I--Fundamentals (Getting Started)',
-         'url': ' '},
+         'url': 'https://www.amazon.co.uk/Core-Java-I-Fundamentals-Cay-Horstmann/dp/0135166306'},
         {'title': 'Thinking in Java (Getting Started)',
-         'url': ' '},
+         'url': 'https://www.amazon.co.uk/Thinking-Java-Bruce-Eckel/dp/0131872486'},
         {'title': 'Java Concurrency in Practice (Advanced)',
-         'url': ' '},
+         'url': 'https://www.amazon.co.uk/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601'},
         {'title': 'Clean Code: A Handbook of Agile Software Craftsmanship (Advanced)',
-         'url': ' '} ]
+         'url': 'https://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882'} ]
 
     recommend_C_pages = [
         {'title': 'C Programming: A Modern Approach (Getting Started)',
-         'url': ' '},
+         'url': 'https://www.amazon.co.uk/C-Programming-Modern-Approach-King/dp/0393979504'},
         {'title': 'The C Programming Language (Getting Started)',
-         'url': ' '},
+         'url': 'https://www.amazon.co.uk/C-Programming-Language-2nd/dp/0131103628'},
         {'title': 'C Traps and Pitfalls (Advanced)',
-         'url': ' '},
+         'url': 'https://www.amazon.com/C-Traps-Pitfalls-Andrew-Koenig/dp/0201179288'},
         {'title': 'Expert C Programming: Deep C Secrets (Advanced)',
-         'url': ' '} ]
+         'url': 'https://www.amazon.co.uk/Expert-Programming-Peter-van-Linden/dp/0131774298'} ]
 
     recommend_python_pages = [
         {'title': 'A Byte of Python (Getting Started)',
-         'url': ' '},
+         'url': 'https://www.amazon.co.uk/Byte-Python-Swaroop-C-H-ebook/dp/B00FJ7S2JU'},
         {'title': 'Think Python (Getting Started)',
-         'url': ' '},
+         'url': 'https://www.amazon.co.uk/Think-Python-Allen-B-Downey/dp/144933072X'},
         {'title': 'Fluent Python: Clear, Concise, and Effective Programming (Advanced)',
-         'url': ' '},
+         'url': 'https://www.amazon.co.uk/Fluent-Python-Luciano-Ramalho/dp/1491946008'},
         {'title': 'Effective Python: 90 Specific Ways to Write Better Python (Advanced)',
-         'url': ' '} ]
+         'url': 'https://www.amazon.co.uk/Effective-Python-Specific-Software-Development/dp/0134853989'} ]
 
     
     cats = {'Python': {'pages': python_pages, 'views': 128, 'likes': 64},
