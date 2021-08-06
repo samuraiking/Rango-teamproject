@@ -2,74 +2,37 @@
 <div class="sidebar fl">
     <br/>
     <ul class="body_left_list">
+        {% block list %}
         <li>
             <label>
-                <span>宣 传</span>
-                <i class="iconfont iconxiajiantou"></i>
+                <span>Language</span>
+                <i ></i>
                 <a href="javascript:;"></a>
             </label>
             <ul>
-                <li>
-                    <label>
-                        <i class="iconfont iconYYGK"></i>
-                        <span>二级栏目1栏目1</span>
-                        <i class="iconfont iconyoujiantou"></i>
-                        <a href="javascript:;"></a>
-                    </label>
-                    <ul>
-                        <li>
-                            <label>
-                                <span>三级栏目</span>
-                                <i class="iconfont iconyoujiantou"></i>
-                                <a href="javascript:;"></a>
-                            </label>
-                            <ul>
-                                <li>
-                                    <label>
-                                        <span>四级栏目</span>
-                                        <i class="iconfont iconyoujiantou"></i>
-                                        <a href="javascript:;"></a>
-                                    </label>
-                                </li>
-                                
-                            </ul>
-                        </li>
-                        
-                    </ul>
-                </li>
-                <li>
-                    <label>
-                        <i class="iconfont iconYYGK"></i>
-                        <span>二级栏目2</span>
-                        <i class="iconfont iconyoujiantou"></i>
-                        <a href="javascript:;"></a>
-                    </label>
-                    <ul>
-                        
-                        <li>
-                            <label>
-                                <span>三级栏目</span>
-                                <i class="iconfont iconyoujiantou"></i>
-                                <a href="javascript:;"></a>
-                            </label>
-                            <ul>
                 
-                                <li>
-                                    <label>
-                                        <span>四级栏目</span>
-                                        <i class="iconfont iconyoujiantou"></i>
-                                        <a href="javascript:;"></a>
-                                    </label>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                
+                {% if categories %}
+                    {% for c in categories %}
+                    {% if c == current_category %}
+                    <li class="nav-item">
+                        <strong><a class="nav-link active" href="{% url 'rango:show_category' c.slug %}">
+                            <span data-feather="archive"></span>{{ c.name }}</a>
+                        </strong>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'rango:show_category' c.slug %}">
+                            <span data-feather="archive"></span>{{ c.name }}
+                        </a>
+                    </li>
+                {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <li><strong>There are no categories present.</strong></li>
+                {% endif %}  
             </ul>
         </li>
-        
-        
+        {% endblock %}
     </ul>
 </div>
 

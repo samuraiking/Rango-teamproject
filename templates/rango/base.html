@@ -49,7 +49,8 @@
             
             <div class="body_sidebar">
                 {% block sidebar_block %}
-                    {% include 'rango/sidebar.html' %}
+                    {% get_category_list category %}
+                   
                 {% endblock %}
             </div>
 
@@ -71,7 +72,7 @@
                     <br/>
                     <div class="sidebar-sticky">
                         {% block sidebar_block %}
-                            {% get_category_list category %}
+                            
                         {% endblock %}
                     </div>
                 </nav>

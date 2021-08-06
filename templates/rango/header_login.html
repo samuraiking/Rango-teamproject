@@ -1,8 +1,8 @@
 <div class="login-small">
     {% if user.is_anonymous %}
-        <a href="{% url 'auth_login' %}" class="ginthusiasm-link alt-colour">Log In | Sign Up</a>
+        <a href="{% url 'auth_login' %}" class="alt-colour">Log In | Sign Up</a>
     {% else %}
-        <a href="/" class="ginthusiasm-link alt-colour">My Account</a>
-        <a href="{% url 'auth_logout' %}" class="ginthusiasm-link alt-colour">Log Out</a>
+        <a href="{% url 'rango:profile' user.username  %}" class="alt-colour">My Account</a>
+        <a href="{% url 'auth_logout' %}" class="alt-colour">Log Out</a>
     {% endif %}
 </div>
