@@ -143,10 +143,10 @@ def search(request):
     result_list = []
     query=None
     if request.method == 'POST':
-        query = request.POST['query'].strip()
+        query = request.POST['keyword'].strip()
     if query is not None:
         # Run our Bing function to get the results list!
-        result_list = run_query(query)
+        result_list=Page.objects.filter(title__contains=query)
     return render(request, 'rango/search.html', {'result_list': result_list})
 
 

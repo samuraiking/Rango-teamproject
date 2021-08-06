@@ -1,8 +1,12 @@
 <div class='header-search'>
     <ul id='header-search-results' ></ul>
-    {% csrf_token %}
-    <input id="header-search-field" type="text" placeholder="&#x1f50d;">
-    <a id="header-search-button" class="rango-search-button" href="#"><span>Search</span></a>
+   
+    
+    <form class="form-inline" id="user-form" method="post" action="{% url 'rango:search' %}">
+        {% csrf_token %}
+        <input name="keyword" id="header-search-field" type="text" placeholder="&#x1f50d;">
+        <button type="submit" id="header-search-button" class="rango-search-button">Search</button>
+    </form>>
 </div>
 
 

@@ -14,7 +14,7 @@
      {% csrf_token %}
 
      <div class="form-group">
-         <input class="form-control" type="text" size="50" name="query" id="query" />
+         <input class="form-control" type="text" size="50" name="keyword" id="query" />
         </div>
         <button class="btn btn-primary"type="submit"name="submit">Search</button>
     </form>
@@ -29,14 +29,14 @@
 
             <h3 class="list-group-item-heading">
  
-                <a href="{{ result.link }}">
+                <a href="{% url 'rango:goto' %}?page_id={{ result.id }}">
  
                     {{ result.title|safe|escape }}
  
                 </a>
  </h3>
  <p class="list-group-item-text">
-     {{ result.summary|safe|escape }}
+     ({{ result.views|safe|escape }} Views)
  </p>
 </div>
 {% endfor %}
