@@ -1,0 +1,118 @@
+header.header-small {
+
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: var(--base-color);
+    color: var(--foreground-alt);
+    height: var(--header-small-height);
+    top: 0;
+}
+
+header.header-small img {
+    max-width: 75px;
+    flex-grow: 1;
+}
+
+header.header-small nav {
+    position: relative;
+    height: 50px;
+    flex-grow: 6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+header.header-small nav {
+    width: 50%;
+}
+
+header nav a {
+    width: 25%;
+    height: 80%;
+}
+
+header a.rango-search-button {
+    height: 60%;
+    width: 10%;
+}
+
+header .login-small {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+    white-space: nowrap;
+}
+
+header .login-small a {
+    text-align: center;
+    align-self: center;
+    color: var(--foreground-alt);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header .header-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    margin-right: 10%;
+}
+
+header nav a {
+    min-width: 120px;
+    display: table;
+    color: var(--foreground-alt);
+    text-decoration: none;
+    transition: background-color 150ms linear, border-radius 150ms linear;
+}
+
+header nav a span {
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+header nav a:hover {
+    background-color: var(--highlight-alt);
+}
+
+header .header-search a.rango-search-button {
+    width: 25%;
+}
+
+header .header-search input[type='text'] {
+    -webkit-appearance: none;
+    padding: 0px;
+    height: 60%;
+    width: 70%;
+    font-size: 0.9em;
+    border: none;
+    text-align: center;
+}
+
+#header-search-results {
+    display: inline;
+    position: absolute;
+    width: 70%;
+    left: 0;
+    z-index: 1;
+    top: 41px;
+    text-align: left;
+    margin: 0;
+    background-color: white;
+}
+
+#header-search-results * {
+    font-size: 0.95em;
+}

@@ -38,7 +38,7 @@ def run_query(search_terms):
 
     search_url = 'https://api.bing.microsoft.com/v7.0/search'
     headers = {'Ocp-Apim-Subscription-Key': bing_key}
-    params = {'q': search_terms, 'textDecorations': True, 'textFormat':'HTML'}
+    params = {'q': search_terms, 'textDecorations': True, 'textFormat':' HTML'}
 
     # Issue the request, given the details above.
     response = requests.get(search_url, headers=headers, params=params)

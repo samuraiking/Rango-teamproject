@@ -18,7 +18,7 @@ def index(request):
     page_list = Page.objects.order_by('-views')[:5]
 
     context_dict = {}
-    context_dict['boldmessage'] = 'Crunchy, creamy, cookie, candy, cupcake!'
+    context_dict['boldmessage'] = 'Welcame to our site!'
     context_dict['categories'] = category_list
     context_dict['pages'] = page_list
 
@@ -94,7 +94,15 @@ def add_page(request, category_name_slug):
     context_dict = {'form': form, 'category': category}
     return render(request, 'rango/add_page.html', context=context_dict)
 
-
+def search(request):
+    result_list = []
+    query=None
+    if request.method == 'POST':
+        query = request.POST['query'].strip()
+    if query is not None:
+        # Run our Bing function to get the results list!
+        result_list = run_query(query)
+    return render(request, 'rango/search.html', {'result_list': result_list})
 
 
 

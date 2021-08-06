@@ -1,0 +1,8 @@
+<div class="login-small">
+    {% if user.is_anonymous %}
+        <a href="{% url 'auth_login' %}" class="ginthusiasm-link alt-colour">Log In | Sign Up</a>
+    {% else %}
+        <a href="/" class="ginthusiasm-link alt-colour">My Account</a>
+        <a href="{% url 'auth_logout' %}" class="ginthusiasm-link alt-colour">Log Out</a>
+    {% endif %}
+</div>

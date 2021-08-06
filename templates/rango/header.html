@@ -1,0 +1,8 @@
+{% load staticfiles %}
+
+    <header class='header-small fixed-top'>
+        <a href='/'><img src="{% static 'images/favicon.png' %}" alt='site logo'/></a>
+        {% include 'rango/header_nav.html' %}
+        {% include 'rango/header_login.html' %}
+        {% include 'rango/header_search.html' %}
+    </header>

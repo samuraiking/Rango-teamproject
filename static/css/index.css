@@ -1,0 +1,51 @@
+.body_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    --base-width: 100%;
+    --margin: 1%;
+    padding: 0px;
+}
+
+
+
+.body_content .index-widget {
+    padding: 0 20px;
+    margin: var(--margin);
+    flex-basis: calc(var(--base-width) / 3 - 2 * var(--margin));
+    flex-grow: 1;
+    background: rgb(222, 242, 255);
+}
+
+.index-widget.welcome{
+    text-align: center;
+    background: #e6e9fd;
+    
+}
+
+.index-widget.tall {
+    height: 450px;
+}
+
+.index-widget.wide {
+    flex-basis: calc(2 * var(--base-width) / 3 - 2 * var(--margin));
+    flex-grow: 2;
+    
+}
+
+.index-widget.full {
+    flex-basis: calc(var(--base-width) - 2 * var(--margin));
+    flex-grow: 3;
+}
+
+.welcome test {
+    flex-basis:750px
+}
+
+.welcome h1 {
+    font-size: 20px;
+}
+
+
