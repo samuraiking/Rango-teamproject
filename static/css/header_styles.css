@@ -9,6 +9,7 @@ header.header-small {
     background-color: var(--base-color);
     color: var(--foreground-alt);
     height: var(--header-small-height);
+    top: 0;
 }
 
 header.header-small img {
